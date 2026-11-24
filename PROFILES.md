@@ -1,6 +1,6 @@
 # Optional work profiles
 
-Version 4.3. Select only relevant methods and record why each gate applies. Profiles compose: a data dashboard may need software, data and UI methods. These are starting points, not complete specialist standards. They do not grant external actions or supersede adopted requirements.
+Version 4.4-rc1. Select only relevant methods and record why each gate applies. Profiles compose: a data dashboard may need software, data and UI methods. These are starting points, not complete specialist standards. They do not grant external actions or supersede adopted requirements.
 
 ## P1. Software and systems
 
@@ -43,7 +43,7 @@ No UI module is required for a backend-only change. Conversely, a technically si
 
 Define the analytical question, intended use, population/time window, units, data provenance, access rights and limitations. Inspect missingness, duplication, joins, transformations, leakage, selection effects and assumptions. Preserve immutable inputs or source/version identifiers and a reproducible transformation path where possible. Do not expose sensitive raw data through evidence logs.
 
-Check an independently calculated sample or known-value control in addition to executing the pipeline. Distinguish computational reproduction from valid inference: rerunning the same biased analysis can reproduce the same wrong conclusion. Quantify uncertainty using methods appropriate to the design; make causal claims only when the design supports them. Review charts for misleading scales, aggregation and labels. Specialist review depends on consequence and analytical complexity, not whether the output is a spreadsheet or code.
+Define quantitative metrics before measuring: units, event boundaries, workload/sample, environment, statistic, threshold and rationale; keep targets distinct from observations and retain raw measurements. Check an independently calculated sample or known-value control in addition to executing the pipeline. Distinguish computational reproduction from valid inference: rerunning the same biased analysis can reproduce the same wrong conclusion. Quantify uncertainty using methods appropriate to the design; make causal claims only when the design supports them. Review charts for misleading scales, aggregation and labels. Specialist review depends on consequence and analytical complexity, not whether the output is a spreadsheet or code.
 
 Deliver the requested report/data/code with methods, scope and limitations. A novel model, web dashboard or production deployment is not automatically part of an analysis request.
 

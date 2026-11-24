@@ -1,10 +1,10 @@
 # Bounded visual review and refinement
 
-Version 4.3. Select for material UI polish, redesign or visual audit after establishing the user journey and supported variants in [UI_DESIGN_PROTOCOL.md](UI_DESIGN_PROTOCOL.md). A small UI fix needs a focused render and relevant behavior check. This procedure works with browser, native-app or other authorized rendering tools; it requires no particular language, model, framework or review service.
+Version 4.4-rc1. Select for material UI polish, redesign or visual audit after establishing the user journey and supported variants in [UI_DESIGN_PROTOCOL.md](UI_DESIGN_PROTOCOL.md). A small UI fix needs a focused render and relevant behavior check. This procedure works with browser, native-app or other authorized rendering tools; it requires no particular language, model, framework or review service.
 
 ## V1. Freeze the review packet
 
-Record the task goal, mandatory behavior/accessibility gates, visual direction, candidate and baseline identities, relevant states/variants, checks, review method, resource ceiling and stop condition. Choose a finite round/time/cost limit suited to the task before iteration. Required review comes from the assurance profile; extra reviewers are optional and must be authorized. A single context can provide labelled first-party review where that assurance is sufficient.
+Record the task goal, mandatory behavior/accessibility gates, visual direction, candidate and baseline identities, relevant states/variants, checks, review method, resource ceiling and stop condition. Choose a finite round/time/cost limit suited to the task before iteration. Required review comes from the assurance level; extra reviewers are optional and must be authorized. A single context can provide labelled first-party review where that assurance is sufficient.
 
 Reuse the project's components and semantic design roles where they exist. Typography, spacing, geometry, focus, motion and interaction conventions should form a coherent system. Record a scoped exception when reuse cannot meet the user need. Prefer clear primary-action hierarchy, readable long content, distinguishable controls and restrained chrome. A particular color, spacing grid, radius formula, icon or component library is a project choice; none is universally banned or required.
 

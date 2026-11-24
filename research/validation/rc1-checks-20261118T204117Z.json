@@ -1,0 +1,337 @@
+{
+  "version": "4.4-rc1",
+  "assessment": "document-maintenance controls on an isolated copy; not agent trials or independent review",
+  "started_utc": "2026-11-18T20:41:17+00:00",
+  "finished_utc": "2026-11-18T20:41:29+00:00",
+  "python": "3.14.7",
+  "platform": "win32",
+  "source_manifest_sha256": "31cc09cc445c28feff07979329741acad14ede0dca0dc84c0b726e9d8a90988d",
+  "source_files": 53,
+  "tested_manifest_sha256": "31cc09cc445c28feff07979329741acad14ede0dca0dc84c0b726e9d8a90988d",
+  "tested_files": 53,
+  "external_skill_validator": "not run",
+  "checks": [
+    {
+      "check": "relocated_clean",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "stale_master",
+      "expected_exit": 1,
+      "expected_message": "Master prompt differs",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling"
+    },
+    {
+      "check": "stale_master_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "broken_local_link",
+      "expected_exit": 1,
+      "expected_message": "missing local file link",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nREADME.md: missing local file link absent-control-file.md"
+    },
+    {
+      "check": "broken_local_link_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "provider_leakage",
+      "expected_exit": 1,
+      "expected_message": "portability guard matched",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nWORKFLOW_CONFIGURATION.md:49: portability guard matched /\\bclaude\\b/"
+    },
+    {
+      "check": "provider_leakage_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "compact_marker_loss",
+      "expected_exit": 1,
+      "expected_message": "lost required rule marker",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nCOMPACT_PROMPT.md lost required rule marker: 'Do not weaken a check'"
+    },
+    {
+      "check": "compact_marker_loss_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "compact_invariant_loss",
+      "expected_exit": 1,
+      "expected_message": "lost mandatory invariant INV-07",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nCOMPACT_PROMPT.md lost mandatory invariant INV-07"
+    },
+    {
+      "check": "compact_invariant_loss_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "compact_over_budget",
+      "expected_exit": 1,
+      "expected_message": "exceeds its 10500-byte budget",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nCOMPACT_PROMPT.md exceeds its 10500-byte budget"
+    },
+    {
+      "check": "compact_over_budget_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "tier1_over_ceiling",
+      "expected_exit": 1,
+      "expected_message": "Tier 1 core is",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nTier 1 core is 39880 bytes, above its 39480-byte ceiling"
+    },
+    {
+      "check": "tier1_over_ceiling_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "stale_version",
+      "expected_exit": 1,
+      "expected_message": "names a version other than 4.4-rc1",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nPROFILES.md:3: names a version other than 4.4-rc1\nPROFILES.md does not declare Version 4.4-rc1"
+    },
+    {
+      "check": "stale_version_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "missing_patterns",
+      "expected_exit": 1,
+      "expected_message": "portability pattern file missing",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nportability pattern file missing: portability_patterns.txt\nREADME.md: missing local file link tools/portability_patterns.txt"
+    },
+    {
+      "check": "missing_patterns_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "empty_patterns",
+      "expected_exit": 1,
+      "expected_message": "has no patterns",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nportability pattern file has no patterns: portability_patterns.txt"
+    },
+    {
+      "check": "empty_patterns_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "incompatible_preset",
+      "expected_exit": 1,
+      "expected_message": "violates C-01",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\npreset unattended violates C-01: The learner must do the analysis being learned under routine work\npreset unattended violates C-01: The learner must do the analysis being learned under material work\npreset unattended violates C-01: The learner must do the analysis being learned under consequential work\nexample 9: recorded result differs from resolution"
+    },
+    {
+      "check": "incompatible_preset_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "undefined_preset_value",
+      "expected_exit": 1,
+      "expected_message": "preset quick-fix: invalid scaffolding=extreme",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\npreset quick-fix: invalid scaffolding=extreme\nexample 2: recorded result differs from resolution"
+    },
+    {
+      "check": "undefined_preset_value_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "preset_coupling",
+      "expected_exit": 1,
+      "expected_message": "preset careful-change couples dimensions",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\npreset careful-change couples dimensions assurance, communication\nexample 13: recorded result differs from resolution"
+    },
+    {
+      "check": "preset_coupling_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "scaffolding_clamp_warning_removed",
+      "expected_exit": 1,
+      "expected_message": "example 2: recorded result differs from resolution",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nexample 2: recorded result differs from resolution"
+    },
+    {
+      "check": "scaffolding_clamp_warning_removed_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "quoted_default_drift",
+      "expected_exit": 1,
+      "expected_message": "does not quote the K5 default stagnation_window=3",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nWORKFLOW.md \u00a711 does not quote the K5 default stagnation_window=3 (\"three attempts without new evidence\")\nexample 1: recorded result differs from resolution\nexample 2: recorded result differs from resolution\nexample 3: recorded result differs from resolution\nexample 4: recorded result differs from resolution\nexample 5: recorded result differs from resolution\nexample 6: recorded result differs from resolution\nexample 7: recorded result differs from resolution\nexample 8: recorded result differs from resolution\nexample 9: recorded result differs from resolution\nexample 10: recorded result differs from resolution\nexample 11: recorded result differs from resolution\nexample 12: recorded result differs from resolution\nexample 13: recorded result differs from resolution"
+    },
+    {
+      "check": "quoted_default_drift_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "core_invariant_deleted_everywhere",
+      "expected_exit": 1,
+      "expected_message": "must define exactly INV-01..INV-12",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nWORKFLOW.md must define exactly INV-01..INV-12 in order; found INV-01, INV-02, INV-03, INV-04, INV-05, INV-06, INV-07, INV-08, INV-09, INV-10, INV-11\nCOMPACT_PROMPT.md lost mandatory invariant INV-12"
+    },
+    {
+      "check": "core_invariant_deleted_everywhere_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "example_drift",
+      "expected_exit": 1,
+      "expected_message": "recorded result differs from resolution",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nexample 2: recorded result differs from resolution"
+    },
+    {
+      "check": "example_drift_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "glossary_dangling",
+      "expected_exit": 1,
+      "expected_message": "points to missing section",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nGLOSSARY.md: Claim points to missing section WORKFLOW.md \u00a799"
+    },
+    {
+      "check": "glossary_dangling_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "missing_composition",
+      "expected_exit": 1,
+      "expected_message": "missing or unreadable canonical input",
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED: missing or unreadable canonical input: [Errno 2] No such file or directory: 'C:\\\\Temp\\\\claude\\\\a8cf641ce0f7dfdb\\\\8118a3a1-0dc7-4a5e-a767-cd1de92dbd5b\\\\scratchpad\\\\tmp\\\\workflow-rc1-oydl6syx\\\\adaptive-agent-workflow\\\\COMPOSITION.md'"
+    },
+    {
+      "check": "missing_composition_restored",
+      "expected_exit": 0,
+      "expected_message": null,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 invariant IDs and 14 markers; Tier 1 core 39478/39480 bytes; versions declared; local links resolve; glossary resolves; composition tables, single-dimension presets, quoted defaults and examples consistent; 15 portability guards clear across 21 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "skill_frontmatter_and_folder_name",
+      "passed": true,
+      "output": []
+    },
+    {
+      "check": "isolated_copy_restored_exactly",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

@@ -141,3 +141,27 @@ Related usability correction: A3 and the compact tier now inspect existing autho
 The optional skill entry point now selects a tier before loading modules. Universal token-count claims were replaced with a byte-budget description and receiving-tokenizer guidance. New public cases G37–G50 cover configuration, capture failures, recovery, review limits and authorization. They remain development scenarios, not an executed agent benchmark or independent acceptance set.
 
 All revised procedures were inspected by their author. No independent reviewer, live UI refinement, external council, human study or cross-model/environment performance trial ran. [VALIDATION.md](VALIDATION.md) records actual maintenance checks separately. Future benefit claims require the existing controlled improvement protocol; the supplied analysis alone cannot establish them.
+
+## Version 4.4-rc1 — composable, evidence-driven candidate (not adopted)
+
+18 November 2026. Inputs: the owner's brief for a 4.4 candidate, an earlier Deep Research report on a composable successor, and a Deep Research report on OpenAI's November 2026 Linux-kernel security pipeline. Both reports were written without access to the 4.3 files, so their "missing functionality" claims were treated as provisional. Following CONTINUOUS_IMPROVEMENT C1–C2, the cycle ran in this order:
+
+1. **Baseline.** 4.3 was preserved unchanged with a SHA-256 manifest before any edit. Two audits read the authoritative files; four literature reviews covered human–automation collaboration, verification integrity, adaptive scaffolding and stopping, and evaluation and configuration design. The synthesis is `research/EVIDENCE_BASE.md`; the 34-row traceability matrix is `research/TRACEABILITY.md`.
+2. **Diagnosis.** About a third of the reports' recommendations were already implemented in 4.3 or rested on false premises (for example, the master prompt was already generated and byte-checked). The real gaps were narrower: no attribution or scope check at acceptance, six state vocabularies, a compact tier that had drifted from the core (three protections dropped), no configurable participation or cadence, a binary independence label, undefined stagnation, and a self-test whose records broke the package's own evidence-binding rules.
+3. **Candidate.** Thirteen candidate decisions (`research/ARCHITECTURE_DECISIONS.md`): numbered invariants, one consequence classification, three new settings with presets and precedence, requested/effective/observed configuration, one claim lifecycle, seven verification dimensions, per-stage participation, scaffolding as policy, failure classes and stagnation, consolidations that keep the Tier 1 core within its 4.3 size, a single-source composition helper, and corrected self-test evidence.
+4. **Review and freeze.** A fresh-context review (same model family, cooperative) found 28 defects, including 4.3 safeguards silently dropped and presets that coupled dimensions. All were reconciled (`research/REVIEW_RECONCILIATION.md`), and the candidate, contract and arm packages were frozen by hash (`research/FREEZE.md`). A verification review found ten further defects; they were fixed and the candidate re-frozen once, with no trial run in between.
+5. **Trial.** Not yet run. The frozen comparison against an ordinary agent, unmodified 4.3 and selected ablations is `research/EXPERIMENT_CONTRACT.md`.
+6. **Decision.** Pending. 4.4-rc1 is not adopted; 4.3 remains the stable version.
+
+### Deliberately not adopted
+
+| Proposal | Reason |
+|---|---|
+| A new primitive ontology or Scout/Analyst/Validator role roster | Renames existing responsibilities; fixed rosters were rejected in 4.1 |
+| Six-axis configuration schema with planning depth and topology as free preferences | No evidence isolates planning benefit; multi-agent topology degrades sequential work; both are derived and clamped instead |
+| A single global autonomy level | Human–automation research supports per-stage allocation |
+| Time-based evidence expiry | 4.3 invalidates on change; revalidation before consequential action covers moving subjects |
+| Funnel resource policy in the core | One campaign, with stage costs that could not be verified |
+| Fixed retry, stagnation or timeout constants | No source establishes them; defaults are labelled hypotheses |
+| Generating the compact tier from the core | Compression is a judgement; parity checking by invariant ID is the smaller step |
+| Automatic de-escalation of approvals or assurance | Rejected in 4.2; scaffolding may lighten only on recorded evidence between tasks |

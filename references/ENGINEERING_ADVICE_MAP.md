@@ -1,6 +1,6 @@
 # Pragmatic engineering advice map
 
-Version 4.3. This maps each of the 100 tips in the supplied *Pragmatic Programmer* analysis (pragmatic_programmer_human_vs_agentic_advice.docx) to the rule that operationalizes it and where that rule lives. The tip titles and interpretations belong to that analysis. Check the book itself before relying on an exact interpretation. A mapping here means the idea shaped a rule. It does not mean the rule is mechanically enforced.
+Version 4.4-rc1. This maps each of the 100 tips in the supplied *Pragmatic Programmer* analysis (pragmatic_programmer_human_vs_agentic_advice.docx) to the rule that operationalizes it and where that rule lives. The tip titles and interpretations belong to that analysis. Check the book itself before relying on an exact interpretation. A mapping here means the idea shaped a rule. It does not mean the rule is mechanically enforced.
 
 Home keys:
 

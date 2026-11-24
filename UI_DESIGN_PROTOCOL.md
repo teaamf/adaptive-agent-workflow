@@ -1,6 +1,6 @@
 # UI design protocol
 
-Version 4.3. Apply to user-facing work within the governing workflow. This is an operational synthesis, not a claim that every design principle is a universal law. Use the relevant sections progressively; do not load a catalogue of hundreds of tips into every worker.
+Version 4.4-rc1. Apply to user-facing work within the governing workflow. This is an operational synthesis, not a claim that every design principle is a universal law. Use the relevant sections progressively; do not load a catalogue of hundreds of tips into every worker.
 
 ## U1. Establish the user outcome before the screen
 
@@ -64,9 +64,9 @@ For screenshot regression, freeze stable data, fonts, scale and rendering condit
 
 Use [UI_REVIEW_PLAYBOOK.md](UI_REVIEW_PLAYBOOK.md) for material visual refinement: explicit readiness and capture failure handling, evidence-bound findings, bounded iterations and recovery that preserves user edits. A focused UI fix needs only its relevant render and behavior checks. Supported states and themes come from the project, not a fixed screenshot matrix.
 
-## U6. Accessibility profile and evidence limits
+## U6. Accessibility target and evidence limits
 
-Freeze an applicable accessibility profile: target platform, standard/guidance versions, mapped criteria, test methods, supported assistive technology, devices and allowed exceptions with rationale. Recheck current official platform guidance when beginning implementation. Web WCAG criteria, informative WCAG2ICT guidance and native platform recommendations are distinct inputs; do not claim that one automated scan or a native app screenshot establishes universal WCAG conformance.
+Freeze an applicable accessibility target: target platform, standard/guidance versions, mapped criteria, test methods, supported assistive technology, devices and allowed exceptions with rationale. Recheck current official platform guidance when beginning implementation. Web WCAG criteria, informative WCAG2ICT guidance and native platform recommendations are distinct inputs; do not claim that one automated scan or a native app screenshot establishes universal WCAG conformance.
 
 Select native, web or other medium-specific accessibility guidance for the actual deliverable. Record units, supported assistive mechanisms and runtime constraints explicitly. Dense or unusual interfaces need a justified accessibility strategy and tested alternatives; do not silently waive a criterion or transfer geometry thresholds between incompatible units and platforms. No specific operating system, input method, hardware or device matrix is imposed by this module.
 

@@ -1,5 +1,7 @@
 # Selective merge of the three folders
 
+> Historical record of the version 4.1 merge, kept unchanged in substance. In 4.4-rc1 it remains authoritative unless superseded by `research/ARCHITECTURE_DECISIONS.md`; "assurance profile" in this record means what 4.4-rc1 calls an assurance level.
+
 Version 4.1. This is a consolidation of compatible knowledge, not a concatenation of competing instructions or an implementation of a new agent runtime.
 
 ## Decision

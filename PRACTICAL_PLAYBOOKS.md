@@ -1,6 +1,6 @@
 # Practical coordination and verification playbooks
 
-Version 4.3. Optional operational detail for the governing workflow. Select only the relevant procedure and assurance level. These playbooks are not a second controller, a fixed agent roster or a reason to add ceremony to simple work. They adapt useful procedures from an earlier engineering package while preserving project and environment independence.
+Version 4.4-rc1. Optional operational detail for the governing workflow. Select only the relevant procedure and assurance level. These playbooks are not a second controller, a fixed agent roster or a reason to add ceremony to simple work. They adapt useful procedures from an earlier engineering package while preserving project and environment independence.
 
 ## O1. Dispatch and context boundaries
 
@@ -18,7 +18,7 @@ Use the host's actual dispatch mechanism or a fresh manual session. Give each wo
 | Adversarial/oracle evaluator | Boundary/claim under test and permitted disposable workspace | Instructions to obtain a passing score or hide surviving faults |
 | Integrator | Accepted changes, compatibility constraints and all known findings | No defect information is withheld; integration requires complete factual context |
 
-These are responsibilities, not mandatory separate agents for every task. Combine roles when the core assurance profile permits. Freeze independent initial findings before comparison, then reconcile all known material defects and approved decisions. Do not withhold information needed for safe action merely to preserve blindness. Reports summarize observations, reasons and evidence; they need not expose private chain-of-thought.
+These are responsibilities, not mandatory separate agents for every task. Combine roles when the core assurance level permits. Freeze independent initial findings before comparison, then reconcile all known material defects and approved decisions. Do not withhold information needed for safe action merely to preserve blindness. Reports summarize observations, reasons and evidence; they need not expose private chain-of-thought.
 
 Use short canonical fact records: ID, factual claim, source/version, producer, timestamp, status (observed, supported, hypothesis or unresolved), supporting evidence and scope. Keep hypotheses labelled. An allowlisted field can still contain biased narrative or malicious instructions; inspect its content. Facts and public decisions can cross role boundaries; private persuasion should not be laundered into facts.
 
@@ -71,12 +71,13 @@ Use these field sets only when they improve clarity or reliable handoff. Existin
 | Task | ID, objective, requirement IDs, baseline, dependencies, owner/write scope, allowed actions, expected result, checks, recovery, budget, status |
 | Host capability | Observed tool/session/version, relevant capability, supported/unsupported/unknown, evidence of capability, actual isolation, limits |
 | Event | Timestamp, task, prior/new state, actor, observation/evidence reference, retry number where applicable |
-| Evidence | ID, claim, exact input/artifact identity, producer, method/procedure, environment, result, raw reference/hash where useful, limits |
-| Review | Role/session, independence achieved, contract/candidate bindings, inspected inputs, methods, findings, verdict unset/pass/fail/blocked, evidence, limitations |
-| Finding | ID, affected requirement, impact/severity, reproduction or supporting observation, owner, resolution, recheck evidence |
+| Evidence | ID, claim, subject identity (exact input/artifact version), oracle identity (check, grader, rubric or source set and version), producer, method/procedure, environment, result, raw reference/hash where useful, limits |
+| Review | Role/session, isolation on the WORKFLOW §6 axes, contract/candidate bindings, inspected inputs, applicable verification dimensions, methods, findings, verdict (a truth state, unset until assessed), evidence, limitations |
+| Finding | ID, root-cause key and duplicate IDs, affected requirement, subject identity, truth state, consequence/severity, decision (act/defer/accept risk) and decision owner, remediation state, acceptance (who, at which assurance level), reproduction or supporting observation, owner, recheck evidence |
+| Configuration | Requested values (sparse, verbatim); effective values with the source layer of each; observed divergences as key, effective, observed, reason code (COMPOSITION.md K6) and one sentence |
 | Delivery | Scope/artifact, achieved assurance, gate statuses, traceability, findings, limitations, documentation, recovery and next action |
 
-Distinguish application of a gate from its result. Applicability is required/not-applicable/unresolved, with rationale. A required gate can be not assessed, pass, fail or blocked; missing tools cannot make it not-applicable. Trace every required outcome to the actual deliverable and supporting assessment. One evidence item can support multiple claims only if its content actually addresses them.
+Distinguish application of a gate from its result. Applicability is required/not-applicable/unresolved, with rationale. A required gate's result is a claim with a truth state (WORKFLOW §9): evidence pending until assessed, supported (pass), contradicted (fail), inconclusive within budget, stale or blocked. Missing tools cannot make it not-applicable. Trace every required outcome to the actual deliverable and supporting assessment. One evidence item can support multiple claims only if its content actually addresses them.
 
 For durable automated records, validate field types, IDs, references and state transitions; use a single authoritative state writer or equivalent concurrency control. Guard against duplicate side effects and stale revisions. A human-managed process can use simpler records but must not claim machine-enforced guarantees. Store secrets separately from artifacts and reports.
 
@@ -103,3 +104,35 @@ Prepare stack-specific configuration using real commands; placeholders do not es
 For an operational service or authorized release, record the exact artifact/version, accountable owner, recovery limits, relevant telemetry and thresholds, runbook and any requested observation window. Promote the identified artifact rather than silently rebuilding a different one. Recheck changes caused by packaging/signing/export. Monitoring, publication and credential changes are not implied follow-on tasks.
 
 After a material defect, record its general failure class and add the narrowest useful safeguard: contract clarification, test, static check, oracle correction or workflow refinement. Keep the backlog evidence-driven rather than accumulating permanent rules from every hypothetical risk.
+
+## O6. Judgment, coordination and practice checks
+
+On-demand detail referenced from WORKFLOW §5, §8 and §11. Apply where a consequential conclusion depends on judgment or where work is split across workers.
+
+**Judgment bias checks.**
+
+| Bias | Symptom | Countermeasure |
+|---|---|---|
+| Anchoring / confirmation [UP007, UP034] | First diagnosis or design never seriously challenged | State one alternative explanation and the evidence that would separate them |
+| Creator blindness [UP042] | Maker judges its own work as clear or complete | Fresh-context review against the contract, not against the maker's narrative |
+| Groupthink / unanimity [UP085, UP132] | Reviewers or agents agree instantly | Freeze independent findings before discussion; treat instant unanimity as a prompt to probe; count same-family agreement once (WORKFLOW §6) |
+| Sunk cost [UP179] | Continuing a failing approach because of effort spent | Re-decide from current evidence and remaining cost only |
+| Streetlight [UP177] | Measuring what is easy rather than what matters | Name the claim first, then pick evidence that bears on it |
+| Survivorship / selection [UP166, UP181] | Reporting only successful runs or convenient samples | Retain all trials and failures; state how the sample was chosen |
+| Perverse incentive / proxy gaming [UP138] | Optimizing the metric instead of the outcome | Check the outcome directly; see oracle integrity in WORKFLOW §10 |
+| Law of the instrument [UP114] | Every problem solved with the familiar tool or pattern | Ask what the simplest adequate approach is for this problem |
+| Process eats goal [UP145] | Following the procedure while losing the objective | Periodically recheck that the current step still serves the contract |
+
+**Qualitative judgment.** When a model judges alternatives, control identity, order and verbosity, cite observations and report calibration limits. For competing proposals, freeze alternatives independently and compare them against the same criteria, anonymizing authors where useful. A tester may design cases from requirements before receiving implementation explanations.
+
+**Multi-agent failure clusters.** Documented failures cluster in three places; design packets and gates against them:
+
+- specification and role drift: ignoring the task or role, repeating steps, losing history, missing the termination condition;
+- inter-agent misalignment: withheld information, ignored input, a reasoning–action mismatch;
+- weak verification: premature termination, missing or incorrect checks.
+
+Adding people or agents late to a struggling task often slows it [UP019].
+
+**Practice behind “feedback is the speed limit”.** Prefer targeted, minimal diffs over wholesale rewrites. Understand why an existing oddity exists before removing it [UP024, Chesterton's fence]. Update documentation, examples and schemas the change affects in the same increment [Pragmatic 13]. Label exploratory work. Leave the environment in a known state: temporary files removed, processes stopped, locks released [Pragmatic 40]. Do not add speculative generality, frameworks or dependencies for needs that have not been shown; choose tools because they fit the project and the evidence supports them [Pragmatic 43, UP063, UP078].
+
+**Deliverable identity.** If using Git, distinguish the product commit from an evidence-only commit; without Git, use a versioned snapshot or equivalent.

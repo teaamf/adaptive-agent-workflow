@@ -1,16 +1,16 @@
 # Environment adaptation
 
-Version 4.3. No particular editor, model, agent framework, shell, operating system, repository host or cloud service is required. This is a capability contract, not a claim that every available environment has been tested or can execute every project.
+Version 4.4-rc1. No particular editor, model, agent framework, shell, operating system, repository host or cloud service is required. This is a capability contract, not a claim that every available environment has been tested or can execute every project.
 
 ## Choose a loading tier by capacity, not brand
 
 | Tier | Load | Use when |
 |---|---|---|
-| 0 Compact | COMPACT_PROMPT.md only (small; 16 KB maintenance ceiling) | Small context window; weaker long-instruction following; quick tasks; or a per-turn instruction budget |
+| 0 Compact | COMPACT_PROMPT.md only (small; 10,500-byte maintenance ceiling) | Small context window; weaker long-instruction following; quick tasks; or a per-turn instruction budget |
 | 1 Modular | WORKFLOW.md + AGENT_INTERACTION.md + PROJECT_TEMPLATE.md, then only the selected modules | Moderate context; file access, so modules can be read on demand |
 | 2 Full | MASTER_PROMPT.md (fully expanded; measure for the receiving model) | Large context and no file access, where everything must be supplied at once |
 
-Estimate the size against the model's actual context window, leaving room for the project's own inputs and working memory. As a rule of thumb, instructions should take a small fraction of the context. Never load two tiers together. Never truncate a tier silently: if even the compact tier does not fit, report the gap. A higher tier adds method detail, not authority. All three share the same core rules.
+Estimate the size against the model's actual context window, leaving room for the project's own inputs and working memory. As a rule of thumb, instructions should take a small fraction of the context. Never load two tiers together. Never truncate a tier silently: if even the compact tier does not fit, report the gap. A higher tier adds method detail, not authority. All three carry the mandatory invariants INV-01 to INV-12; the maintenance check confirms each ID is present in every tier, not that the wording is equivalent.
 
 The maintenance helper checks bytes, not model tokens. Token counts depend on the receiving tokenizer. For standing-rule placement, progressive disclosure, effective enforcement and skill packaging use [WORKFLOW_CONFIGURATION.md](WORKFLOW_CONFIGURATION.md); load it during adoption or configuration changes, rather than on every task.
 
@@ -26,7 +26,7 @@ The protocol depends on no model family, vendor, reasoning mode, tool-call synta
 | Separate sessions or workers | Independent review in a fresh context | Sequential manual sessions, or blocked independent acceptance; never role-play independence |
 | Extended reasoning | May help planning | Not required; use explicit written plans and checks instead |
 
-Different model versions and vendors behave differently on the same prompt. When the model or host changes, treat earlier behavioral assumptions as unverified. Rerun a few relevant evaluation/SCENARIOS.md cases before relying on the workflow for consequential work. Different model names do not by themselves establish independent review.
+Observed capability on the task class is also the starting point for scaffolding intensity (COMPOSITION.md K4): a worker that demonstrably handles the class well may receive less procedure. It never receives less assurance (INV-07). Different model versions and vendors behave differently on the same prompt. When the model or host changes, treat earlier behavioral assumptions as unverified. Rerun a few relevant evaluation/SCENARIOS.md cases before relying on the workflow for consequential work. Different model names do not by themselves establish independent review.
 
 ## Map capabilities rather than brands
 
@@ -47,9 +47,11 @@ Discover actual tools and their semantics before use. Use current official host 
 
 Use native independent workers for parallel-ready tasks when available and authorized. Keep write ownership and integration explicit. Without native workers, manual fresh sessions can perform independent roles sequentially using frozen packets. In a single context, make authorized first-party progress and apply the selected assurance rules; do not simulate independence with role-play. A text-only environment can complete eligible text work but cannot make unsupported execution claims.
 
-No fixed number of workers is required. If one environment cannot satisfy a gate, report the missing capability and hand off that bounded work to an eligible environment when available. Transferring work does not authorize exporting private data to a new service.
+No fixed number of workers is required. A requested capability the host lacks is recorded as a divergence between requested and effective configuration with a reason code such as HostLacksCapability or ReviewerUnavailable (COMPOSITION.md K6); a required one stays required and blocked. If one environment cannot satisfy a gate, report the missing capability and hand off that bounded work to an eligible environment when available. Transferring work does not authorize exporting private data to a new service.
 
 ## Task packet
+
+A text layout for the task-packet fields defined in WORKFLOW §6, plus identifiers and isolation:
 
 ```text
 mission/task/worker identifiers, workflow and contract revision
@@ -58,7 +60,8 @@ input/baseline/candidate identity and factual evidence
 authorized artifact/workspace and allowed actions
 actual context/write isolation and excluded persuasive inputs
 expected output: result, observations, findings, evidence and limits
-budget, stopping condition and next dependency
+budget, stopping condition, effective configuration where it differs from defaults, and next dependency
+team rationale when more than one worker is used
 ```
 
 Load only relevant modules and requirements, with a completeness index held by the coordinator. Many hosts support the same progressive-disclosure pattern natively, in different forms:

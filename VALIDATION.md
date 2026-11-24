@@ -1,6 +1,6 @@
 # Validation scope
 
-Updated 4 November 2026 for version 4.3. This report concerns the workflow document package, not an executed project or cross-host performance benchmark. Earlier version checks below are retained as history.
+Updated 18 November 2026 for the 4.4-rc1 experimental candidate. This report concerns the workflow document package, not an executed project or cross-host performance benchmark. Earlier version checks below are retained as history.
 
 The mechanical checker validates master/companion consistency, local file links and a narrow guard against known historical product-name/requirement leakage. That last guard cannot detect all semantic project assumptions; author review is also needed.
 
@@ -78,6 +78,37 @@ A copy in an explicitly writable artifacts directory was checked from a differen
 
 The initial default temporary directory denied a nested write before any control ran. The test was moved to the permitted artifacts directory; this setup failure is retained in the report. The relocated copy was removed after verification. Negative controls changed only the temporary copy, not the delivered package.
 
-Raw outputs, expected/actual exit codes and sizes are in [research/v4.3-check-results.json](research/v4.3-check-results.json). [research/run_v4_3_checks.py](research/run_v4_3_checks.py) reproduces these maintenance controls given an authorized temporary root and a skill-validator path. It is a research helper, not a runtime prerequisite.
+Raw outputs, expected/actual exit codes and sizes are in [research/v4.3-check-results.json](research/v4.3-check-results.json). `research/run_v4_3_checks.py` (preserved in the 4.3 baseline; superseded in 4.4-rc1 by `research/run_rc1_checks.py`) reproduces these maintenance controls given an authorized temporary root and a skill-validator path. It is a research helper, not a runtime prerequisite.
 
 The author inspected G37–G50 against the new procedures and checked the core/compact/skill routing for consistency. These are public scenario inspections, not independent agent executions. No live UI was refined, no model council ran, and no human usability study, independent review or multi-host/model/language trial was performed. This revision establishes a consistent, inspectable procedure; reduced cost, higher visual quality and improved transfer remain hypotheses for a controlled evaluation.
+
+## Version 4.4-rc1 checks
+
+18 November 2026. 4.4-rc1 is an experimental candidate; nothing here is evidence that it works better than 4.3. Statements fall into four kinds, kept apart as the owner's brief requires.
+
+**Mechanically validated (document and tool properties only).**
+
+- `tools/documents.py check` passes on the frozen tree. It checks: the master against eleven modules and LAUNCH.md; the invariant set exactly INV-01 to INV-12 and every ID in the compact tier; the 14 compact markers; the compact ceiling of 10,500 bytes (actual 10,239); the Tier 1 ceiling of 39,480 bytes (actual 39,478); version declarations; local links; glossary sections; and, through `tools/composition.py`, table consistency, single-dimension presets, WORKFLOW §11 quoting the K5 defaults, resolver independence and twelve re-derived example configurations.
+- `research/run_rc1_checks.py` ran 19 mutation controls on an isolated copy. Each control had to make the check fail with a specific message and then pass again once restored. Together with the clean relocated run, the frontmatter check and the exact-restore check, that gives 41 records, all passed. The run-stamped JSON is in `research/validation/`, together with the manifest of the tree it tested. That manifest is of the tree before the results were added; `FREEZE.md` records the final tree.
+- `research/build_ablations.py` built all five arm packages (A1–A5) under one packaging rule. Each edited tree passed its own document check, and each ablation's residual-text patterns found nothing. The summary is `research/validation/arms.json`; the hashes are in `FREEZE.md`.
+- The 4.3 baseline still matches its manifest (`releases/4.3-baseline/SHA256SUMS`, digest `2059d8b7…3c55`).
+
+These support at most VERIFIED_DOCUMENT_OR_TOOL_FIX for the defects they address (CONTINUOUS_IMPROVEMENT C4).
+
+**Author re-inspection, not agent execution.** G11, G19, G21, G25 and G27 were re-read against the rc1 rules (hypothesis H6). Each reaches the same verdict as under 4.3, in the unified vocabulary:
+
+| Case | 4.3 verdict | rc1 rule and state |
+|---|---|---|
+| G11 unchanged candidate, new session | Revalidate; do not discard for session identity | §9 "Correctly bound evidence survives a new session after revalidation"; truth stays *supported within scope* after revalidation |
+| G19 placeholder bundle, "tests passed" only | Insufficient for acceptance | §9 evidence fields, §10 "A green suite is evidence only about what it exercises", INV-06; truth *evidence pending*; acceptance *not accepted* |
+| G21 one hashed log for many claims | Digest reuse is not coverage | §9 "A digest proves identity, not that the right behavior was evaluated"; each claim keeps its own truth state |
+| G25 progress note says F3 passes | Recheck reality; downgrade without end-to-end evidence | A4 resume routine; §13 ledger "passes only on end-to-end evidence"; F3 becomes *evidence pending* |
+| G27 intermittent test passes on the third rerun | Not green; unresolved nondeterminism | §11 "Never rerun unchanged conditions until lucky success", pause trigger "intermittent results", Unreliable oracle class; truth *inconclusive within budget* |
+
+G51–G71 were written for rc1 and inspected by their author only. The re-inspector shares a model family with the author of the rules and the fresh-context reviewer; this is cooperative evidence.
+
+**Proposed behaviour.** Everything the documents instruct an agent to do, including configuration notices, participation, scaffolding, stopping, and attribution and scope checks at acceptance, has not been observed in any agent run.
+
+**Empirical findings.** None. The pilot in `research/EXPERIMENT_CONTRACT.md` is frozen and has not been run.
+
+**Review.** A fresh-context review (same model family, cooperative separation) found 28 defects, and all were reconciled (`research/REVIEW_RECONCILIATION.md`). A second fresh-context review, again in the same family with cooperative separation, verified the reconciliation and found ten new defects (one major). All ten were fixed before the current freeze and were not re-reviewed (`research/REVIEW_RECONCILIATION.md` "Verification review"; both review texts are in `research/reviews/`).

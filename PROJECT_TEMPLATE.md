@@ -15,8 +15,10 @@ Existing agent instruction files or conventions to respect:
 Model/host capability tier (compact / modular / full) and known limits:
 Hard / soft / inferred constraints (test inferred ones before relying on them):
 Security posture: untrusted inputs? private data? external actions? (all three → validation gate):
-Applicable work profiles and rationale:
-Assurance: lightweight / standard / high consequence; why:
+Applicable domain profiles and rationale:
+Consequence class (routine / material / consequential) and assurance level; why:
+Requested configuration, sparse (participation, cadence/format, scaffolding, budget; COMPOSITION.md):
+Applicable nonfunctional requirements (performance, security, accessibility, conventions):
 Existing process/tools to reuse:
 Authorized workspace or artifact access; permissions:
 Environment capabilities and gaps:

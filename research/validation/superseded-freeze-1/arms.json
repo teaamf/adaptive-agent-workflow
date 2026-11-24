@@ -1,0 +1,49 @@
+{
+  "packaging_rule": {
+    "excluded": [
+      "research",
+      "evaluation",
+      "__pycache__",
+      "*.pyc",
+      "SHA256SUMS",
+      "RESEARCH_AND_CHANGES.md",
+      "MERGE_DECISIONS.md",
+      "VALIDATION.md",
+      "MIGRATION.md"
+    ]
+  },
+  "rc1_source_manifest": "54740ac886ecbff2c78588fbe21da54c10bd1c0d94802364192e781c66c86371",
+  "baseline_source_manifest": "0ce31aea4f388ce6537b29d1e64c21c3b21072f8259fb0e3002f1e0b928b98d3",
+  "arms": {
+    "A1-baseline-4.3": {
+      "package_manifest_sha256": "802075ad4d5835724969a8e68ff607681c8928db5dfa0619d50bf8e249105679",
+      "files": 20,
+      "own_check": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with requir",
+      "residual_patterns_clear": 0
+    },
+    "A2-rc1": {
+      "package_manifest_sha256": "034f5c7edae843db4ff4712eca414c70dfbb46937b9034d28e2a4e0568c8b2aa",
+      "files": 24,
+      "own_check": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 inva",
+      "residual_patterns_clear": 0
+    },
+    "A3-no-attribution-scope": {
+      "package_manifest_sha256": "d04ae4f25dad23ddea6bb4f18535b2b44466e1f15d7dfa1be1cbe364b837b8d8",
+      "files": 24,
+      "own_check": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 11 inva",
+      "residual_patterns_clear": 8
+    },
+    "A4-fixed-scaffolding": {
+      "package_manifest_sha256": "a6b66ec3560bcb0d5d23ed6b9cc7baeacbf1cb20a373fefec6a449f6a78dbc91",
+      "files": 24,
+      "own_check": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 inva",
+      "residual_patterns_clear": 8
+    },
+    "A5-no-independent-review": {
+      "package_manifest_sha256": "a240b547db373f17a3d9a248419b19542501db55e2d1f0289d3712830a5896f0",
+      "files": 24,
+      "own_check": "DOCUMENT CONSISTENCY PASSED (4.4-rc1): master matches 11 modules and launch; compact tier within budget carrying 12 inva",
+      "residual_patterns_clear": 8
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Practical coordination and verification playbooks
 
-Version 4.4-rc1. Optional operational detail for the governing workflow. Select only the relevant procedure and assurance level. These playbooks are not a second controller, a fixed agent roster or a reason to add ceremony to simple work. They adapt useful procedures from an earlier engineering package while preserving project and environment independence.
+Version 4.4-rc2. Optional operational detail for the governing workflow. Select only the relevant procedure and assurance level. These playbooks are not a second controller, a fixed agent roster or a reason to add ceremony to simple work. They adapt useful procedures from an earlier engineering package while preserving project and environment independence.
 
 ## O1. Dispatch and context boundaries
 

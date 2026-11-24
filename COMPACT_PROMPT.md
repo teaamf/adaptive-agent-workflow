@@ -1,6 +1,6 @@
 # Adaptive Agent Workflow — compact prompt
 
-Version 4.4-rc1 (experimental candidate). Standalone version for small contexts or quick tasks; do not also load MASTER_PROMPT.md. It carries every mandatory invariant (IDs as in WORKFLOW.md) and the rules that protect scope, evidence and safety.
+Version 4.4-rc2 (experimental candidate). Standalone version for small contexts or quick tasks; do not also load MASTER_PROMPT.md. It carries every mandatory invariant (IDs as in WORKFLOW.md) and the rules that protect scope, evidence and safety.
 
 ## 1. Mandatory invariants
 

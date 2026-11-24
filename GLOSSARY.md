@@ -1,6 +1,6 @@
 # Architecture and component glossary
 
-Version 4.4-rc1. On-demand reference. Each term has exactly one authoritative definition, named in the last column; other modules refer to it rather than restating it. The categories separate what the workflow is made of from how it is configured, executed, recorded and presented. Most rows name an existing 4.3 concept. Rows new in 4.4-rc1 are the invariant IDs, consequence class as a single classification, participation, cadence and format, scaffolding intensity, compatibility rules, reason codes, isolation axes and the acceptance axis. Terms from other methods are mapped onto these rather than added. The maintenance check confirms that each named section exists, not that it defines the term well.
+Version 4.4-rc2. On-demand reference. Each term has exactly one authoritative definition, named in the last column; other modules refer to it rather than restating it. The categories separate what the workflow is made of from how it is configured, executed, recorded and presented. Most rows name an existing 4.3 concept. Rows new in 4.4-rc2 are the invariant IDs, consequence class as a single classification, participation, cadence and format, scaffolding intensity, compatibility rules, reason codes, isolation axes and the acceptance axis. Terms from other methods are mapped onto these rather than added. The maintenance check confirms that each named section exists, not that it defines the term well.
 
 <!-- table:glossary -->
 | Term | Category | Defined in |

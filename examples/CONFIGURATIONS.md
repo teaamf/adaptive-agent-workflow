@@ -1,6 +1,6 @@
 # Representative configurations
 
-Version 4.4-rc1. Worked examples for COMPOSITION.md. Each block shows a requested configuration: plain `key: value` lines, with `@` lines describing the situation (consequence class and host capability) rather than requests. The text block under it is the resolved result produced by `tools/composition.py`, which `tools/documents.py check` re-derives to detect drift. Each line gives an effective value and, in brackets, the layer it came from. These are illustrations of the rules, not records of real runs.
+Version 4.4-rc2. Worked examples for COMPOSITION.md. Each block shows a requested configuration: plain `key: value` lines, with `@` lines describing the situation (consequence class and host capability) rather than requests. The text block under it is the resolved result produced by `tools/composition.py`, which `tools/documents.py check` re-derives to detect drift. Each line gives an effective value and, in brackets, the layer it came from. These are illustrations of the rules, not records of real runs.
 
 ## 1. Routine work with nothing configured
 

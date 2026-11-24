@@ -1,6 +1,6 @@
 # Workflow composition
 
-Version 4.4-rc1. On-demand module. Load it when someone asks for a non-default way of working, names a preset, when a host cannot provide a requested capability, or when adopting the package. **Most tasks configure nothing:** routine work uses the defaults and produces no configuration notice (WORKFLOW §0).
+Version 4.4-rc2. On-demand module. Load it when someone asks for a non-default way of working, names a preset, when a host cannot provide a requested capability, or when adopting the package. **Most tasks configure nothing:** routine work uses the defaults and produces no configuration notice (WORKFLOW §0).
 
 This module defines the configurable policies once. It does not define the mandatory invariants (WORKFLOW INV-01 to INV-12), the assurance levels (WORKFLOW §3), the domain profiles (PROFILES.md) or the loading tiers (HOST_ADAPTERS.md). Every setting can be followed as a plain-language instruction. The tables are also read by the optional `tools/composition.py` helper, which checks consistency and resolves examples but enforces nothing at run time (K9).
 

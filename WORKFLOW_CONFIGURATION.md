@@ -1,6 +1,6 @@
 # Configure the workflow without coupling it to a host
 
-Version 4.4-rc1. Use when adopting the package, maintaining shared instructions or turning repeated guidance into a reliable check. Ordinary tasks use the existing configuration. This procedure installs nothing and grants no permissions.
+Version 4.4-rc2. Use when adopting the package, maintaining shared instructions or turning repeated guidance into a reliable check. Ordinary tasks use the existing configuration. This procedure installs nothing and grants no permissions.
 
 ## F1. Separate standing rules from procedures
 

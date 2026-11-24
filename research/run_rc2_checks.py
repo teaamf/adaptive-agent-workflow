@@ -1,4 +1,4 @@
-"""Run 4.4-rc1 document-maintenance controls in an isolated temporary copy.
+"""Run 4.4-rc2 document-maintenance controls in an isolated temporary copy.
 
 Each control mutates the copy, expects tools/documents.py check to fail with a specific message, then
 restores the file and expects a clean pass. Results are written to a run-stamped file in --out, never
@@ -63,7 +63,7 @@ def main():
     records = []
     env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', PYTHONIOENCODING='utf-8')
     source_hash, source_files = manifest(root)
-    with TemporaryDirectory(prefix='workflow-rc1-', dir=temp_parent) as temp_name:
+    with TemporaryDirectory(prefix='workflow-rc2-', dir=temp_parent) as temp_name:
         temp_root = Path(temp_name).resolve()
         target = temp_root/'adaptive-agent-workflow'
         if temp_root.parent != temp_parent or target == root or root.is_relative_to(temp_root):
@@ -117,8 +117,8 @@ def main():
              'lost mandatory invariant INV-07'),
             ('compact_over_budget', 'COMPACT_PROMPT.md', lambda s: s+'\n'+'x'*11000+'\n', 'exceeds its 10500-byte budget'),
             ('tier1_over_ceiling', 'PROJECT_TEMPLATE.md', lambda s: s+'\n'+'x'*400+'\n', 'Tier 1 core is'),
-            ('stale_version', 'PROFILES.md', lambda s: s.replace('Version 4.4-rc1.', 'Version 4.3.', 1),
-             'names a version other than 4.4-rc1'),
+            ('stale_version', 'PROFILES.md', lambda s: s.replace('Version 4.4-rc2.', 'Version 4.3.', 1),
+             'names a version other than 4.4-rc2'),
             ('missing_patterns', 'tools/portability_patterns.txt', None, 'portability pattern file missing'),
             ('empty_patterns', 'tools/portability_patterns.txt', lambda s: '# comments only\n', 'has no patterns'),
             ('incompatible_preset', 'COMPOSITION.md',
@@ -157,7 +157,7 @@ def main():
         records.append({'check': 'isolated_copy_restored_exactly', 'passed': restored_hash == tested_hash})
     finished = datetime.now(timezone.utc)
     report = {
-        'version': '4.4-rc1',
+        'version': '4.4-rc2',
         'assessment': 'document-maintenance controls on an isolated copy; not agent trials or independent review',
         'started_utc': started.isoformat(timespec='seconds'), 'finished_utc': finished.isoformat(timespec='seconds'),
         'python': sys.version.split()[0], 'platform': sys.platform,
@@ -166,7 +166,7 @@ def main():
         'external_skill_validator': 'run' if args.skill_validator else 'not run',
         'checks': records, 'all_passed': all(r['passed'] for r in records),
     }
-    out = out_dir/f'rc1-checks-{started.strftime("%Y%m%dT%H%M%SZ")}.json'
+    out = out_dir/f'rc2-checks-{started.strftime("%Y%m%dT%H%M%SZ")}.json'
     out.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8', newline='\n')
     print(f'Recorded {len(records)} checks in {out}; all passed: {report["all_passed"]}')
     return 0 if report['all_passed'] else 1

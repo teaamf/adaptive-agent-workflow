@@ -1,6 +1,6 @@
-# Migrating from 4.3 to 4.4-rc1
+# Migrating from 4.3 to 4.4-rc2
 
-Version 4.4-rc1. For adopters and maintainers. 4.4-rc1 is an experimental candidate: adopt it for trials, not as a replacement for 4.3, until the comparison in `research/EXPERIMENT_CONTRACT.md` has been run and decided.
+Version 4.4-rc2. For adopters and maintainers. 4.4-rc2 is an experimental candidate: adopt it for trials, not as a replacement for 4.3, until the comparison in `research/EXPERIMENT_CONTRACT.md` has been run and decided.
 
 ## What stays the same
 
@@ -10,7 +10,7 @@ Version 4.4-rc1. For adopters and maintainers. 4.4-rc1 is an experimental candid
 
 ## What changed for agents and users
 
-| Area | 4.3 | 4.4-rc1 | Action for adopters |
+| Area | 4.3 | 4.4-rc2 | Action for adopters |
 |---|---|---|---|
 | Mandatory rules | Spread across sections and restated in several places | Twelve numbered invariants, INV-01 to INV-12, at the top of WORKFLOW.md and carried by every tier | None; cite IDs in project rules if useful |
 | Consequence | Fast-path criteria and Lightweight fit described separately | One classification: routine, material, consequential (WORKFLOW §3); checkpoint need is still decided per action (A3) | None |
@@ -39,7 +39,7 @@ Every 4.3 safeguard and ceremony limit that the two reviews identified is kept, 
 
 ## Renamed terms
 
-| 4.3 term | 4.4-rc1 term |
+| 4.3 term | 4.4-rc2 term |
 |---|---|
 | assurance profile | assurance level |
 | work profile, module (from PROFILES.md) | domain profile |
@@ -51,7 +51,7 @@ The old terms remain understandable; agents should read them as the new ones.
 
 ## Mapping old state vocabularies
 
-| 4.3 value | Where | 4.4-rc1 |
+| 4.3 value | Where | 4.4-rc2 |
 |---|---|---|
 | proposed, evidence pending, supported within scope, contradicted, stale, blocked | WORKFLOW §9 | Truth axis, unchanged, plus *inconclusive within budget* |
 | hypothesis / observed / supported / unresolved | PRACTICAL_PLAYBOOKS O1 fact status | proposed / evidence item / supported within scope / inconclusive within budget |
@@ -64,9 +64,9 @@ The old terms remain understandable; agents should read them as the new ones.
 ## Maintainer changes
 
 - `tools/documents.py check` now also pins the invariant set INV-01 to INV-12, checks every ID in the compact tier, the compact ceiling (10,500 bytes), the Tier 1 byte ceiling (39,480 bytes, the 4.3 size), version declarations, glossary resolution, composition consistency, and fails when the portability-pattern file is missing or empty. Its link scan skips `research/`, `releases/`, `reports/` and `research_notes/`.
-- `research/run_rc1_checks.py` replaces the 4.3 helper. It writes run-stamped results to a directory you name, records the actual time and a manifest hash of the tested tree, and keeps the record of every control, including failed ones.
+- `research/run_rc2_checks.py` replaces the 4.3 helper. It writes run-stamped results to a directory you name, records the actual time and a manifest hash of the tested tree, and keeps the record of every control, including failed ones.
 - MASTER_PROMPT.md is still generated; it now embeds COMPOSITION.md. GLOSSARY.md is a separate lookup file, not embedded.
 
 ## Rolling back
 
-The 4.3 package is preserved unchanged and identified by its SHA-256 manifest (`releases/4.3-baseline/SHA256SUMS` in the development tree). To roll back, return to that package; 4.3 contracts and records remain valid there, and records written under 4.4-rc1 map back through the tables above, with *inconclusive within budget* recorded as *evidence pending* plus a note.
+The 4.3 package is preserved unchanged and identified by its SHA-256 manifest (`releases/4.3-baseline/SHA256SUMS` in the development tree). To roll back, return to that package; 4.3 contracts and records remain valid there, and records written under 4.4-rc2 map back through the tables above, with *inconclusive within budget* recorded as *evidence pending* plus a note.

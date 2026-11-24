@@ -6,7 +6,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = '4.4-rc1'
+VERSION = '4.4-rc2'
 MODULES = ('PROJECT_TEMPLATE.md', 'WORKFLOW.md', 'AGENT_INTERACTION.md', 'COMPOSITION.md', 'PROFILES.md',
            'UI_DESIGN_PROTOCOL.md', 'UI_REVIEW_PLAYBOOK.md', 'HOST_ADAPTERS.md',
            'WORKFLOW_CONFIGURATION.md', 'CONTINUOUS_IMPROVEMENT.md', 'PRACTICAL_PLAYBOOKS.md')
@@ -23,7 +23,7 @@ STALE_VERSION = re.compile(r'\bVersion (?!' + re.escape(VERSION) + r')\d+\.\d')
 COMPACT = 'COMPACT_PROMPT.md'
 COMPACT_BUDGET_BYTES = 10500  # 4.3 was 7,791; the excess carries the twelve invariants
 TIER1 = ('WORKFLOW.md', 'AGENT_INTERACTION.md', 'PROJECT_TEMPLATE.md')
-TIER1_BUDGET_BYTES = 39480  # the 4.3 Tier 1 size; 4.4-rc1 must not grow the mandatory core
+TIER1_BUDGET_BYTES = 39480  # the 4.3 Tier 1 size; 4.4-rc2 must not grow the mandatory core
 # The mandatory invariant set is pinned here, so deleting an ID from every tier is still detected.
 EXPECTED_INVARIANTS = tuple(f'INV-{n:02d}' for n in range(1, 13))
 # Phrases the compact tier must keep in addition to every invariant ID; a drift guard, not a proof.

@@ -1,6 +1,6 @@
 # Validation scope
 
-Updated 18 November 2026 for the 4.4-rc1 experimental candidate. This report concerns the workflow document package, not an executed project or cross-host performance benchmark. Earlier version checks below are retained as history.
+Updated 18 November 2026 for the 4.4-rc2 experimental candidate. This report concerns the workflow document package, not an executed project or cross-host performance benchmark. Earlier version checks below are retained as history.
 
 The mechanical checker validates master/companion consistency, local file links and a narrow guard against known historical product-name/requirement leakage. That last guard cannot detect all semantic project assumptions; author review is also needed.
 
@@ -78,18 +78,18 @@ A copy in an explicitly writable artifacts directory was checked from a differen
 
 The initial default temporary directory denied a nested write before any control ran. The test was moved to the permitted artifacts directory; this setup failure is retained in the report. The relocated copy was removed after verification. Negative controls changed only the temporary copy, not the delivered package.
 
-Raw outputs, expected/actual exit codes and sizes are in [research/v4.3-check-results.json](research/v4.3-check-results.json). `research/run_v4_3_checks.py` (preserved in the 4.3 baseline; superseded in 4.4-rc1 by `research/run_rc1_checks.py`) reproduces these maintenance controls given an authorized temporary root and a skill-validator path. It is a research helper, not a runtime prerequisite.
+Raw outputs, expected/actual exit codes and sizes are in [research/v4.3-check-results.json](research/v4.3-check-results.json). `research/run_v4_3_checks.py` (preserved in the 4.3 baseline; superseded in 4.4-rc2 by `research/run_rc2_checks.py`) reproduces these maintenance controls given an authorized temporary root and a skill-validator path. It is a research helper, not a runtime prerequisite.
 
 The author inspected G37–G50 against the new procedures and checked the core/compact/skill routing for consistency. These are public scenario inspections, not independent agent executions. No live UI was refined, no model council ran, and no human usability study, independent review or multi-host/model/language trial was performed. This revision establishes a consistent, inspectable procedure; reduced cost, higher visual quality and improved transfer remain hypotheses for a controlled evaluation.
 
-## Version 4.4-rc1 checks
+## Version 4.4-rc2 checks
 
-18 November 2026. 4.4-rc1 is an experimental candidate; nothing here is evidence that it works better than 4.3. Statements fall into four kinds, kept apart as the owner's brief requires.
+18 November 2026. 4.4-rc2 is an experimental candidate; nothing here is evidence that it works better than 4.3. Statements fall into four kinds, kept apart as the owner's brief requires.
 
 **Mechanically validated (document and tool properties only).**
 
 - `tools/documents.py check` passes on the frozen tree. It checks: the master against eleven modules and LAUNCH.md; the invariant set exactly INV-01 to INV-12 and every ID in the compact tier; the 14 compact markers; the compact ceiling of 10,500 bytes (actual 10,239); the Tier 1 ceiling of 39,480 bytes (actual 39,478); version declarations; local links; glossary sections; and, through `tools/composition.py`, table consistency, single-dimension presets, WORKFLOW §11 quoting the K5 defaults, resolver independence and twelve re-derived example configurations.
-- `research/run_rc1_checks.py` ran 19 mutation controls on an isolated copy. Each control had to make the check fail with a specific message and then pass again once restored. Together with the clean relocated run, the frontmatter check and the exact-restore check, that gives 41 records, all passed. The run-stamped JSON is in `research/validation/`, together with the manifest of the tree it tested. That manifest is of the tree before the results were added; `FREEZE.md` records the final tree.
+- `research/run_rc2_checks.py` ran 19 mutation controls on an isolated copy. Each control had to make the check fail with a specific message and then pass again once restored. Together with the clean relocated run, the frontmatter check and the exact-restore check, that gives 41 records, all passed. The run-stamped JSON is in `research/validation/`, together with the manifest of the tree it tested. That manifest is of the tree before the results were added; `FREEZE.md` records the final tree.
 - `research/build_ablations.py` built all five arm packages (A1–A5) under one packaging rule. Each edited tree passed its own document check, and each ablation's residual-text patterns found nothing. The summary is `research/validation/arms.json`; the hashes are in `FREEZE.md`.
 - The 4.3 baseline still matches its manifest (`releases/4.3-baseline/SHA256SUMS`, digest `2059d8b7…3c55`).
 

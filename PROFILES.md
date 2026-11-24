@@ -1,6 +1,6 @@
 # Optional work profiles
 
-Version 4.4-rc1. Select only relevant methods and record why each gate applies. Profiles compose: a data dashboard may need software, data and UI methods. These are starting points, not complete specialist standards. They do not grant external actions or supersede adopted requirements.
+Version 4.4-rc2. Select only relevant methods and record why each gate applies. Profiles compose: a data dashboard may need software, data and UI methods. These are starting points, not complete specialist standards. They do not grant external actions or supersede adopted requirements.
 
 ## P1. Software and systems
 

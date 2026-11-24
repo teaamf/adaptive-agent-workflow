@@ -1,16 +1,16 @@
-"""Build every arm package of the 4.4-rc1 experiment, identically packaged, and identify each by hash.
+"""Build every arm package of the 4.4-rc2 experiment, identically packaged, and identify each by hash.
 
 Arms:
   A1  the 4.3 baseline, unmodified;
-  A2  4.4-rc1, unmodified;
-  A3  rc1 without the attribution and scope-audit requirements;
-  A4  rc1 with scaffolding fixed at `standard` (no capability-based lightening; §0 still applies);
-  A5  rc1 in which no assurance level requires a separate reviewer or independent verification.
+  A2  4.4-rc2, unmodified;
+  A3  rc2 without the attribution and scope-audit requirements;
+  A4  rc2 with scaffolding fixed at `standard` (no capability-based lightening; §0 still applies);
+  A5  rc2 in which no assurance level requires a separate reviewer or independent verification.
       Honesty rules that hold in every arm stay (INV-06: role-play is not independent review; how to
       report a review's isolation if one happens).
 
-Each ablation is a deterministic text edit of a full rc1 copy. Every edit must match exactly once, so a
-later change to rc1 that breaks an ablation is detected rather than silently producing an unablated arm.
+Each ablation is a deterministic text edit of a full rc2 copy. Every edit must match exactly once, so a
+later change to rc2 that breaks an ablation is detected rather than silently producing an unablated arm.
 The edited full tree is reassembled and must pass its own `tools/documents.py check`. It is then
 packaged by the same rule as every other arm (PACKAGE_EXCLUDE), and the packaged files are searched for
 residual text of the removed component (RESIDUALS); any hit fails the build. Ablation arms are evaluation
@@ -125,7 +125,7 @@ def apply(arm, tree, edits):
     for name in ('WORKFLOW.md', 'COMPACT_PROMPT.md', 'COMPOSITION.md'):
         path = tree/name
         text = path.read_text(encoding='utf-8')
-        path.write_text(text.replace('Version 4.4-rc1', f'Version 4.4-rc1 ablation {arm.split("-")[0]}', 1), encoding='utf-8',
+        path.write_text(text.replace('Version 4.4-rc2', f'Version 4.4-rc2 ablation {arm.split("-")[0]}', 1), encoding='utf-8',
                         newline='\n')
 
 
@@ -175,8 +175,8 @@ def main():
     if work.exists():
         shutil.rmtree(work)
     summary = {'packaging_rule': {'excluded': list(PACKAGE_EXCLUDE)},
-               'rc1_source_manifest': manifest(root)[0], 'baseline_source_manifest': manifest(baseline)[0], 'arms': {}}
-    sources = {'A1-baseline-4.3': (baseline, None), 'A2-rc1': (root, None)}
+               'rc2_source_manifest': manifest(root)[0], 'baseline_source_manifest': manifest(baseline)[0], 'arms': {}}
+    sources = {'A1-baseline-4.3': (baseline, None), 'A2-rc2': (root, None)}
     sources.update({arm: (root, edits) for arm, edits in ARMS.items()})
     for arm, (source, edits) in sources.items():
         full = work/arm

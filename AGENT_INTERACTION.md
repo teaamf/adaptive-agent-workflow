@@ -1,6 +1,6 @@
 # Agent interaction protocol
 
-Version 4.4-rc1. Applies to every run. The agent is itself an interface that people instruct, watch, approve, interrupt, resume and decide whether to trust; this module applies interface design principles to agent behavior and adds no UI to any project. IDs in brackets point to references/ADVICE_REGISTER.md and references/ENGINEERING_ADVICE_MAP.md; they show provenance and are not extra gates.
+Version 4.4-rc2. Applies to every run. The agent is itself an interface that people instruct, watch, approve, interrupt, resume and decide whether to trust; this module applies interface design principles to agent behavior and adds no UI to any project. IDs in brackets point to references/ADVICE_REGISTER.md and references/ENGINEERING_ADVICE_MAP.md; they show provenance and are not extra gates.
 
 ## A1. Make state legible
 

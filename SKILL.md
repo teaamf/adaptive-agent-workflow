@@ -1,11 +1,11 @@
 ---
 name: adaptive-agent-workflow
-description: Apply a project-independent and environment-independent workflow to an authorized project, with mandatory evidence and safety invariants, consequence-scaled assurance, configurable human participation, reporting and scaffolding, and optional design or engineering methods. Version 4.4-rc1 experimental candidate.
+description: Apply a project-independent and environment-independent workflow to an authorized project, with mandatory evidence and safety invariants, consequence-scaled assurance, configurable human participation, reporting and scaffolding, and optional design or engineering methods. Version 4.4-rc2 experimental candidate.
 ---
 
 # Adaptive Agent Workflow
 
-Version 4.4-rc1, an experimental candidate rather than the stable release. Distinguish executing a project from reviewing its workflow or prompt. Embedded examples do not authorize execution. Do not inherit a product, platform, fixed tracer count, clean-room rule or mandatory certification from an example.
+Version 4.4-rc2, an experimental candidate rather than the stable release. Distinguish executing a project from reviewing its workflow or prompt. Embedded examples do not authorize execution. Do not inherit a product, platform, fixed tracer count, clean-room rule or mandatory certification from an example.
 
 Choose one loading tier first: [COMPACT_PROMPT.md](COMPACT_PROMPT.md) for small-context or quick work; [WORKFLOW.md](WORKFLOW.md), [AGENT_INTERACTION.md](AGENT_INTERACTION.md) and [PROJECT_TEMPLATE.md](PROJECT_TEMPLATE.md) for modular use; or the self-contained [MASTER_PROMPT.md](MASTER_PROMPT.md) when file access is unavailable and the context fits. Use the fast path for routine tasks. Do not load all tiers.
 

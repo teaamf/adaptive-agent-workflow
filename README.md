@@ -1,8 +1,8 @@
 # Adaptive Agent Workflow
 
-**A reusable workflow for agent-assisted work that does not depend on the project, model or environment.** Version 4.4-rc1, 18 November 2026.
+**A reusable workflow for agent-assisted work that does not depend on the project, model or environment.** Version 4.4-rc2, 18 November 2026.
 
-> **Experimental candidate.** 4.4-rc1 is a candidate successor to 4.3 prepared for comparative evaluation. It is not the stable release and no superiority over 4.3 has been shown. [MIGRATION.md](MIGRATION.md) lists what changed; the frozen comparison plan is in `research/EXPERIMENT_CONTRACT.md`.
+> **Experimental candidate.** 4.4-rc2 is a candidate successor to 4.3 prepared for comparative evaluation. It is not the stable release and no superiority over 4.3 has been shown. [MIGRATION.md](MIGRATION.md) lists what changed; the frozen comparison plan is in `research/EXPERIMENT_CONTRACT.md`.
 
 Use it with your own project requirements. It prescribes no product, UI, programming language, operating system, editor, model family, model provider, agent framework or repository host. It adapts responsibilities, evidence and assurance to the actual task and to the capabilities actually available. No software or agent service is installed by this package.
 
@@ -43,7 +43,7 @@ Nothing needs configuring for ordinary work. To ask for a different way of worki
 - [COMPOSITION.md](COMPOSITION.md) — configurable policies, presets, precedence, compatibility rules and requested/effective/observed configuration.
 - [GLOSSARY.md](GLOSSARY.md) — one authoritative definition per term, by component category.
 - [examples/CONFIGURATIONS.md](examples/CONFIGURATIONS.md) — representative presets and custom configurations with resolved results.
-- [MIGRATION.md](MIGRATION.md) — moving from 4.3 to 4.4-rc1.
+- [MIGRATION.md](MIGRATION.md) — moving from 4.3 to 4.4-rc2.
 - [PROFILES.md](PROFILES.md) — optional domain profiles: software, UI, data, research, document and operations methods.
 - [UI_DESIGN_PROTOCOL.md](UI_DESIGN_PROTOCOL.md) — UI, accessibility and AI-feature guidance, selected only when relevant.
 - [UI_REVIEW_PLAYBOOK.md](UI_REVIEW_PLAYBOOK.md) — readiness, visual-review findings, bounded refinement and recovery.
@@ -53,7 +53,7 @@ Nothing needs configuring for ordinary work. To ask for a different way of worki
 - [PRACTICAL_PLAYBOOKS.md](PRACTICAL_PLAYBOOKS.md) — optional role handoffs, scenario procedures, record fields and integration steps.
 - [references/ENGINEERING_ADVICE_MAP.md](references/ENGINEERING_ADVICE_MAP.md) and [references/ADVICE_REGISTER.md](references/ADVICE_REGISTER.md) — the source-advice mappings cited by bracketed IDs.
 - [evaluation/SCENARIOS.md](evaluation/SCENARIOS.md) — public cases for trying the workflow on a new model or host.
-- [RESEARCH_AND_CHANGES.md](RESEARCH_AND_CHANGES.md), [MERGE_DECISIONS.md](MERGE_DECISIONS.md), [VALIDATION.md](VALIDATION.md) — provenance, history and the limits of what was checked. The `research/` folder holds the 4.4-rc1 traceability matrix, decision records, experiment contract and change summary.
+- [RESEARCH_AND_CHANGES.md](RESEARCH_AND_CHANGES.md), [MERGE_DECISIONS.md](MERGE_DECISIONS.md), [VALIDATION.md](VALIDATION.md) — provenance, history and the limits of what was checked. The `research/` folder holds the 4.4-rc2 traceability matrix, decision records, experiment contract and change summary.
 
 The optional [SKILL.md](SKILL.md) is an adapter for hosts that discover skills by folder. When deploying it in the open skill format, name the containing package folder `adaptive-agent-workflow` to match its metadata and keep its relative resources together. The checkout can retain its current name. Other hosts use the tiers directly. Collaboration services, CI and trackers can be added through the optional integration contract in the playbooks. The research folder and provenance records describe the package's history; they are not instructions.
 

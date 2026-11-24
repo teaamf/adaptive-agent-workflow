@@ -1,6 +1,6 @@
 # Environment adaptation
 
-Version 4.4-rc1. No particular editor, model, agent framework, shell, operating system, repository host or cloud service is required. This is a capability contract, not a claim that every available environment has been tested or can execute every project.
+Version 4.4-rc2. No particular editor, model, agent framework, shell, operating system, repository host or cloud service is required. This is a capability contract, not a claim that every available environment has been tested or can execute every project.
 
 ## Choose a loading tier by capacity, not brand
 

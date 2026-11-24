@@ -1,6 +1,6 @@
 # Adaptive Agent Workflow
 
-Version 4.4-rc1 (experimental candidate, not the stable release) · Project-independent and environment-independent · 18 November 2026
+Version 4.4-rc2 (experimental candidate, not the stable release) · Project-independent and environment-independent · 18 November 2026
 
 This protocol organizes authorized work using a small set of responsibilities, evidence rules and optional modules. It supports software, data, research and documentation work, with domain acceptance supplied by the project. It is not a product specification, a fixed team, an installed runtime or a claim of universal expertise.
 

@@ -1,6 +1,6 @@
 # Continuous improvement protocol
 
-Version 4.4-rc1. This governs deliberate revisions to the workflow. It does not schedule background activity, recursively spawn agents or authorize unbounded research. A retrospective can propose changes; only the frozen evaluation contract can support claims that a change improved measured outcomes.
+Version 4.4-rc2. This governs deliberate revisions to the workflow. It does not schedule background activity, recursively spawn agents or authorize unbounded research. A retrospective can propose changes; only the frozen evaluation contract can support claims that a change improved measured outcomes.
 
 ## C1. Trigger and diagnose
 
@@ -73,4 +73,4 @@ A domain-profile or assurance-level change must distinguish a justified not-appl
 
 ## C7. Current package's status
 
-This package has document synthesis, iterative primary-source research, consistency checks and author scenario inspection. No cross-domain controlled comparison or multi-host execution benchmark has been performed. Version 4.4-rc1 is a bundled candidate prepared under C2: its frozen comparison against 4.3, an ordinary agent and selected ablations is specified in `research/EXPERIMENT_CONTRACT.md` and has not been run. Until it is, 4.4-rc1 supports no claim of improvement over 4.3, and its mechanical checks support only VERIFIED_DOCUMENT_OR_TOOL_FIX for the defects they address. Generality is a design property with explicit adapters and limits, not a measured guarantee of successful work in every domain.
+This package has document synthesis, iterative primary-source research, consistency checks and author scenario inspection. No cross-domain controlled comparison or multi-host execution benchmark has been performed. Version 4.4-rc2 is a bundled candidate prepared under C2: its frozen comparison against 4.3, an ordinary agent and selected ablations is specified in `research/EXPERIMENT_CONTRACT.md` and has not been run. Until it is, 4.4-rc2 supports no claim of improvement over 4.3, and its mechanical checks support only VERIFIED_DOCUMENT_OR_TOOL_FIX for the defects they address. Generality is a design property with explicit adapters and limits, not a measured guarantee of successful work in every domain.

@@ -1,6 +1,6 @@
 # Bounded visual review and refinement
 
-Version 4.4-rc1. Select for material UI polish, redesign or visual audit after establishing the user journey and supported variants in [UI_DESIGN_PROTOCOL.md](UI_DESIGN_PROTOCOL.md). A small UI fix needs a focused render and relevant behavior check. This procedure works with browser, native-app or other authorized rendering tools; it requires no particular language, model, framework or review service.
+Version 4.4-rc2. Select for material UI polish, redesign or visual audit after establishing the user journey and supported variants in [UI_DESIGN_PROTOCOL.md](UI_DESIGN_PROTOCOL.md). A small UI fix needs a focused render and relevant behavior check. This procedure works with browser, native-app or other authorized rendering tools; it requires no particular language, model, framework or review service.
 
 ## V1. Freeze the review packet
 

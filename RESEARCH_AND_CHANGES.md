@@ -142,6 +142,10 @@ The optional skill entry point now selects a tier before loading modules. Univer
 
 All revised procedures were inspected by their author. No independent reviewer, live UI refinement, external council, human study or cross-model/environment performance trial ran. [VALIDATION.md](VALIDATION.md) records actual maintenance checks separately. Future benefit claims require the existing controlled improvement protocol; the supplied analysis alone cannot establish them.
 
+## Version 4.4-rc2 — resolver corrections (not adopted)
+
+19 November 2026. An independent review of the rc1 review package found two defects in the composition helper. The owner decided to correct them in a new candidate rather than run the experiment with known defects. KD-01: `resolve()` ignored a key written with capitals. KD-02: a misspelt participation value could overwrite an explicit `execute: human`, depending on key order. Both are corrected; nothing else changes apart from the version label. The record is `research/RC2_CHANGES.md`. rc1 is kept unchanged. 4.3 remains the stable version, and no trial has run.
+
 ## Version 4.4-rc1 — composable, evidence-driven candidate (not adopted)
 
 18 November 2026. Inputs: the owner's brief for a 4.4 candidate, an earlier Deep Research report on a composable successor, and a Deep Research report on OpenAI's November 2026 Linux-kernel security pipeline. Both reports were written without access to the 4.3 files, so their "missing functionality" claims were treated as provisional. Following CONTINUOUS_IMPROVEMENT C1–C2, the cycle ran in this order:

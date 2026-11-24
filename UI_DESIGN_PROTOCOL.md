@@ -1,6 +1,6 @@
 # UI design protocol
 
-Version 4.4-rc1. Apply to user-facing work within the governing workflow. This is an operational synthesis, not a claim that every design principle is a universal law. Use the relevant sections progressively; do not load a catalogue of hundreds of tips into every worker.
+Version 4.4-rc2. Apply to user-facing work within the governing workflow. This is an operational synthesis, not a claim that every design principle is a universal law. Use the relevant sections progressively; do not load a catalogue of hundreds of tips into every worker.
 
 ## U1. Establish the user outcome before the screen
 

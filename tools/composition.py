@@ -223,6 +223,15 @@ def resolve(spec, requested, context=None):
             setv(k, v, source)
 
     apply_participation(eff['participation'], 'default (participation)')
+    # rc2 fix KD-01: key names are case-insensitive (WORKFLOW_CONFIGURATION), also when resolve() is called
+    # directly rather than through parse_block. Two spellings of one key keep the later one, with a warning.
+    folded = {}
+    for k, v in requested.items():
+        key = str(k).strip().lower()
+        if key in folded:
+            warnings.append(f'{key} given twice (key names ignore case); the later value is used')
+        folded[key] = v
+    requested = folded
     preset = requested.get('preset')
     if preset is not None:
         if preset not in spec['presets']:
@@ -241,10 +250,24 @@ def resolve(spec, requested, context=None):
         if k != 'preset':
             text = spec['keys'].get(k, {}).get('values') == ['text']
             explicit[k] = v if text else v.lower()
-    if 'participation' in explicit and explicit['participation'] in spec['participation']:
-        setv('participation', explicit['participation'], 'task')
-        apply_participation(explicit['participation'], 'task (participation)')
+    # rc2 fix KD-02: participation, valid or corrected to its closest value, is resolved before every other
+    # explicit key, so an explicit stage setting such as execute: human always overrides the participation
+    # preset, whatever the order of the keys and whether or not the participation value was misspelt.
+    if 'participation' in explicit:
+        v = explicit['participation']
+        if v in spec['participation']:
+            setv('participation', v, 'task')
+            apply_participation(v, 'task (participation)')
+        else:
+            close = difflib.get_close_matches(v, list(spec['participation']), n=2, cutoff=0.6)
+            got = close[0] if len(close) == 1 else eff['participation']
+            diverge('participation', v, got, 'InvalidValue', f'{v} is not a value of participation')
+            if len(close) == 1:
+                setv('participation', got, 'task (closest valid value)')
+                apply_participation(got, 'task (participation)')
     for k, v in explicit.items():
+        if k == 'participation':
+            continue
         if k in spec['protected'] or k.upper().startswith('INV-'):
             diverge(k, v, '(invariant)', 'MandatoryInvariant', f'{k} is a mandatory invariant')
             continue
@@ -258,14 +281,9 @@ def resolve(spec, requested, context=None):
             if k in ORDERED and got in ORDERED[k] and eff.get(k) in ORDERED[k]:
                 got = max(got, eff[k], key=ORDERED[k].index)
             diverge(k, v, got, 'InvalidValue', f'{v} is not a value of {k}')
-            if k == 'participation' and got in spec['participation']:
-                setv(k, got, 'task (closest valid value)')
-                apply_participation(got, 'task (participation)')
-            elif k != 'participation':
-                setv(k, got, 'task (closest valid value)' if len(close) == 1 else src.get(k, 'default'))
+            setv(k, got, 'task (closest valid value)' if len(close) == 1 else src.get(k, 'default'))
             continue
-        if k != 'participation':
-            setv(k, v, 'task')
+        setv(k, v, 'task')
 
     consequence = ctx['consequence']
     floor = FLOOR[consequence]

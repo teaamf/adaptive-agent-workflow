@@ -1,0 +1,60 @@
+{
+  "scope": "Document consolidation, not product or agent-runtime validation",
+  "helper_calls": [
+    {
+      "action": "check",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 7 modules and launch; local file links resolve; known historical project-leakage guard clear. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "action": "check",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling"
+    },
+    {
+      "action": "assemble",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "Assembled master in C:\\Users\\__\\.dev\\_workflow_v3_work\\merge-relocation-4a3f523f"
+    },
+    {
+      "action": "check",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 7 modules and launch; local file links resolve; known historical project-leakage guard clear. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "action": "assemble",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "Assembled master in C:\\Users\\__\\.dev\\_workflow_v3_work\\merge-relocation-4a3f523f"
+    },
+    {
+      "action": "check",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "DOCUMENT CHECK FAILED: missing or unreadable canonical input: [Errno 2] No such file or directory: 'C:\\\\Users\\\\__\\\\.dev\\\\_workflow_v3_work\\\\merge-relocation-4a3f523f\\\\PRACTICAL_PLAYBOOKS.md'"
+    },
+    {
+      "action": "check",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 7 modules and launch; local file links resolve; known historical project-leakage guard clear. Not a semantic, behavioral or universal-portability certificate."
+    }
+  ],
+  "relocation_source_unchanged": true,
+  "preserved_input_file_counts": {
+    "pragmatic-workflow": 14,
+    "workflow-review-h9g46ee9": 9
+  },
+  "pre_merge_backup_verified": true,
+  "legacy_checker_and_fake_run_state_excluded": true,
+  "fixture_observation": {
+    "actual_legacy_result": "LOCAL_READINESS",
+    "legacy_caveat": "Structural and integrity checks passed. Inspect evidence truth; no external action authorized.",
+    "semantic_acceptance": "not established"
+  },
+  "behavioral_agent_trials": "not performed"
+}

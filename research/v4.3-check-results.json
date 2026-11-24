@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-04",
+  "version": "4.3",
+  "assessment": "author document-maintenance checks; not agent trials or independent review",
+  "setup_failure": "Initial default temporary location denied a nested write before checks ran; rerun used an explicitly writable artifacts directory.",
+  "python": "3.14.7",
+  "checks": [
+    {
+      "check": "relocated_clean",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "stale_master",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling"
+    },
+    {
+      "check": "stale_master_restored",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "broken_local_link",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nREADME.md: missing local file link absent-control-file.md"
+    },
+    {
+      "check": "broken_local_link_restored",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "provider_leakage",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling\nWORKFLOW_CONFIGURATION.md:49: portability guard matched /\\bclaude\\b/"
+    },
+    {
+      "check": "provider_leakage_restored",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "compact_rule_loss",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED\nCOMPACT_PROMPT.md lost required rule marker: 'Do not weaken a check'"
+    },
+    {
+      "check": "compact_rule_loss_restored",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "missing_WORKFLOW_CONFIGURATION.md",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED: missing or unreadable canonical input: [Errno 2] No such file or directory: 'C:\\\\Users\\\\__\\\\.codex\\\\visualizations\\\\2026\\\\11\\\\04\\\\01a1a665-9b6d-7093-82d5-e2d7627d6883\\\\workflow-v43-n5f87x0c\\\\adaptive-agent-workflow\\\\WORKFLOW_CONFIGURATION.md'"
+    },
+    {
+      "check": "restored_WORKFLOW_CONFIGURATION.md",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "missing_UI_REVIEW_PLAYBOOK.md",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true,
+      "output": "DOCUMENT CHECK FAILED: missing or unreadable canonical input: [Errno 2] No such file or directory: 'C:\\\\Users\\\\__\\\\.codex\\\\visualizations\\\\2026\\\\11\\\\04\\\\01a1a665-9b6d-7093-82d5-e2d7627d6883\\\\workflow-v43-n5f87x0c\\\\adaptive-agent-workflow\\\\UI_REVIEW_PLAYBOOK.md'"
+    },
+    {
+      "check": "restored_UI_REVIEW_PLAYBOOK.md",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 10 modules and launch; compact tier within budget with required rules; local file links resolve; 15 portability guards clear across 17 operational files. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "check": "packaged_skill_frontmatter",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "output": "Skill is valid!"
+    },
+    {
+      "check": "deployment_folder_matches_skill_name",
+      "passed": true
+    }
+  ],
+  "sizes": {
+    "COMPACT_PROMPT.md": {
+      "bytes": 7791,
+      "words": 1203
+    },
+    "SKILL.md": {
+      "bytes": 2074,
+      "words": 225
+    },
+    "WORKFLOW_CONFIGURATION.md": {
+      "bytes": 5364,
+      "words": 758
+    },
+    "UI_REVIEW_PLAYBOOK.md": {
+      "bytes": 7885,
+      "words": 1068
+    },
+    "MASTER_PROMPT.md": {
+      "bytes": 112623,
+      "words": 15695
+    }
+  },
+  "all_passed": true
+}

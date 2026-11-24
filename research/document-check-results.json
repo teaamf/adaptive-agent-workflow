@@ -1,0 +1,69 @@
+{
+  "scope": "document tooling only",
+  "relocation_passed": true,
+  "source_unchanged": true,
+  "previous_v3_active_files_match_zip": true,
+  "advice_index_entries": 450,
+  "calls": [
+    {
+      "action": "check",
+      "expected": 0,
+      "actual": 0,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 6 modules and launch; local file links resolve; known historical project-leakage guard clear. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "action": "check",
+      "expected": 1,
+      "actual": 1,
+      "output": "DOCUMENT CHECK FAILED\nMaster prompt differs from canonical sources; inspect before assembling"
+    },
+    {
+      "action": "assemble",
+      "expected": 0,
+      "actual": 0,
+      "output": "Assembled master in C:\\Users\\__\\.dev\\_workflow_v3_work\\general-relocation-c623837f"
+    },
+    {
+      "action": "check",
+      "expected": 0,
+      "actual": 0,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 6 modules and launch; local file links resolve; known historical project-leakage guard clear. Not a semantic, behavioral or universal-portability certificate."
+    },
+    {
+      "action": "assemble",
+      "expected": 0,
+      "actual": 0,
+      "output": "Assembled master in C:\\Users\\__\\.dev\\_workflow_v3_work\\general-relocation-c623837f"
+    },
+    {
+      "action": "check",
+      "expected": 1,
+      "actual": 1,
+      "output": "DOCUMENT CHECK FAILED\nKnown project-specific content leaked into generic operational documents"
+    },
+    {
+      "action": "assemble",
+      "expected": 0,
+      "actual": 0,
+      "output": "Assembled master in C:\\Users\\__\\.dev\\_workflow_v3_work\\general-relocation-c623837f"
+    },
+    {
+      "action": "check",
+      "expected": 1,
+      "actual": 1,
+      "output": "DOCUMENT CHECK FAILED: missing or unreadable canonical input: [Errno 2] No such file or directory: 'C:\\\\Users\\\\__\\\\.dev\\\\_workflow_v3_work\\\\general-relocation-c623837f\\\\PROJECT_TEMPLATE.md'"
+    },
+    {
+      "action": "check",
+      "expected": 1,
+      "actual": 1,
+      "output": "DOCUMENT CHECK FAILED\nREADME.md: missing local file link missing-file.md"
+    },
+    {
+      "action": "check",
+      "expected": 0,
+      "actual": 0,
+      "output": "DOCUMENT CONSISTENCY PASSED: self-contained master matches 6 modules and launch; local file links resolve; known historical project-leakage guard clear. Not a semantic, behavioral or universal-portability certificate."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Portability guard patterns: one case-insensitive regular expression per line.
+# Operational documents must not match any of them. Blank lines and lines starting with # are ignored.
+# Adopters: add names of your own products, clients, hosts or models here so they cannot leak into the
+# generic package. Keep project-specific facts in the project's own contract, never in these modules.
+
+# Historical project leakage (the package's origin project)
+MolliKey
+MK-P\d
+USEFUL_OFFLINE_WITH_LICENSED_DICTIONARY
+PHYSICAL_DEVICE_GATE
+
+# Vendor and model neutrality: operational rules must not depend on one provider or host.
+# Open, cross-vendor formats (AGENTS.md, Model Context Protocol) are allowed as labelled examples.
+\bclaude\b
+CLAUDE\.md
+\banthropic\b
+\bopenai\b
+\bgpt-?\d
+\bgemini\b
+\bcopilot\b
+\bcursor\b(?! position)
+\bllama\b
+
+# Machine-specific paths
+[A-Za-z]:\\Users\\
+/home/[a-z]
